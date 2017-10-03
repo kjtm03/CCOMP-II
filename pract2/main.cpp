@@ -15,8 +15,8 @@ int main()
     //int(*p)[2][2]=b;
     //cout<<*(*p+1)<<endl;
     cout<<(b+2)<<endl;
-    cout<<*(*(*(b+1)+1)+1)<<endl;
-    cout<<*(*(*(b+1)+3))<<endl;
+    cout<<*(*(*(b+1)+1)+1)<<endl;//8
+    cout<<*(*(*(b+1)+3))<<endl;//11
     arey(b);
    /* int a[2][3]={
                 {1,2,3},
