@@ -11,7 +11,7 @@ nodo *cabeza;
 nodo *cola;
 nodo *n;
 
-void insertar(nodo *&cabeza, int val){
+void insertar(int val){
 	if(cabeza == NULL){
 		n = new nodo();
 		n->valor = val;
@@ -50,10 +50,10 @@ void mostrarAnt(){
 
 int main(){
 	
-	insertar(cabeza, 1);
-	insertar(cabeza, 2);
-	insertar(cabeza, 3);
-	insertar(cabeza, 4);
+	insertar(1);
+	insertar(2);
+	insertar(3);
+	insertar(4);
 	
 	mostrarSig();
 	mostrarAnt();
