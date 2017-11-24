@@ -4,57 +4,64 @@ using namespace std;
 struct nodo{
 	int valor;
 	nodo *sig;
-	nodo *ant;
 };
 
 nodo *cabeza;
 nodo *cola;
 nodo *n;
+int cont = 0;
 
-void insertar(int val){
+void final(int val){
+	cont += 1;
 	if(cabeza == NULL){
 		n = new nodo();
 		n->valor = val;
-		n->ant = NULL;
+		n->sig = n;
 		cabeza = n;
 		cola = n;
 	}
 	else{
 		n = new nodo();
 		n->valor = val;
-		n->ant = cola;
 		cola->sig = n;
 		cola = n;
 		cola->sig = cabeza;	
 	}
-	
 }
 
-void mostrarSig(){
+void inicio(int val){
+	cont += 1;
+	if(cabeza == NULL){
+		n = new nodo();
+		n->valor = val;
+		n->sig = n;
+		cabeza = n;
+		cola = n;
+	}
+	else{
+		n = new nodo();
+		n->valor = val;
+		n->sig = cabeza;
+		cabeza = n;
+		cola->sig = cabeza;	
+	}
+}
+void mostrar(){
 	nodo *temp = cabeza;
-	while(temp != NULL){
+	for(int i=0;i<cont;i++){
 		cout<<temp->valor<<" ";
 		temp = temp->sig;
 	}
 	cout<<endl;
 }
 
-void mostrarAnt(){
-	nodo *temp = cola;
-	while(temp != NULL){
-		cout<<temp->valor<<" ";
-		temp = temp->ant;
-	}
-	cout<<endl;
-}
 
 int main(){
 	
-	insertar(1);
-	insertar(2);
-	insertar(3);
-	insertar(4);
+	inicio(1);
+	inicio(2);
+	final(3);
+	inicio(4);
+	mostrar();
 	
-	mostrarSig();
-	mostrarAnt();
 }
