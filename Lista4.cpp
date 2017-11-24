@@ -55,6 +55,11 @@ void mostrar(){
 	cout<<endl;
 }
 
+void borrar(){
+	nodo *temp = cabeza->sig;
+	cabeza->sig = cabeza->sig->sig;
+	delete temp;
+}
 
 int main(){
 	
@@ -62,6 +67,8 @@ int main(){
 	inicio(2);
 	final(3);
 	inicio(4);
+	mostrar();
+	borrar();
 	mostrar();
 	
 }
