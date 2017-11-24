@@ -26,8 +26,7 @@ void insertar(int val){
 		cola->sig = n;
 		cola = n;
 		cola->sig = NULL;	
-	}
-	
+	}	
 }
 
 void mostrarSig(){
@@ -48,15 +47,24 @@ void mostrarAnt(){
 	cout<<endl;
 }
 
+void borrar(){
+	nodo *temp = cabeza->sig;
+	cabeza->sig = cabeza->sig->sig;
+	delete temp;
+}
+
 int main(){
 	
-	insertar(1);
 	insertar(2);
 	insertar(3);
 	insertar(4);
+	insertar(1);
 	
 	mostrarSig();
-	mostrarAnt();
+	borrar();
+	mostrarSig();
+	
+	//mostrarAnt();
 	
 	/*n = new nodo();
 	n->valor = 1;
