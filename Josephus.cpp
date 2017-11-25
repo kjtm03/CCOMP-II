@@ -34,6 +34,7 @@ void mostrar(){
 	for(int i=0;i<num;i++){
 		cout<<temp->valor<<" ";
 		temp = temp->sig;
+		if(temp==cabeza)break;
 	}
 	cout<<endl;
 }
