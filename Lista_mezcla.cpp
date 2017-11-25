@@ -4,16 +4,15 @@
 
 using namespace std;
 
-class Nodo{
-public:
-	
+struct Nodo
+{
 	int dato;
 	Nodo *siguiente;
 };
 
 Nodo *lista_1 = NULL;
 Nodo *lista_2 = NULL;
-int dato=0;
+int dato,x;
 
 void insertar(Nodo *&lista, int n){
 	
@@ -96,22 +95,22 @@ void mezcla(Nodo *&lista_1, Nodo *lista_2)
 }
 int main()
 {
-		/*cout<<"Elementos a ingresar: ";
-	    cin>>dato;
-	  	for(int i=0;i<dato;i++){
+		cout<<"Elementos a ingresar: ";
+	    cin>>x;
+	  	for(int i=0;i<x;i++){
 	  		cin>>dato;
-	    	insertarLista(lista_1,dato);
+	    	insertar(lista_1,dato);
 		  }
 		cout<<endl;
 		
 		cout<<"Elementos a ingresar: ";
-	    cin>>dato;
-	  	for(int i=0;i<dato;i++){
+	    cin>>x;
+	  	for(int i=0;i<x;i++){
 	  		cin>>dato;
-	    	insertarLista(lista_2,dato);
+	    	insertar(lista_2,dato);
 		  }
-		cout<<endl;*/
-		insertar(lista_1,1);
+		cout<<endl;
+		/*insertar(lista_1,1);
 		insertar(lista_1,3);
 		insertar(lista_1,5);
 		insertar(lista_1,7);
@@ -120,9 +119,10 @@ int main()
 		insertar(lista_2,2);
 		insertar(lista_2,4);
 		insertar(lista_2,6);
-		mostrar(lista_2);
+		mostrar(lista_2);*/
 		mezcla(lista_1, lista_2);
 		cout<<endl;
 		cout<<"mezcla: ";mostrar(lista_1);
+		//cout<<"mezcla2: ";mostrar(lista_2);
 
 }
